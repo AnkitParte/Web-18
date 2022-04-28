@@ -1,0 +1,29 @@
+#oyaji{
+    width: 20%;
+    margin: auto;
+    padding: 10px;
+    /* display: flex;
+    flex-wrap: wrap; */
+    border-radius: 5px;
+    border: 1px solid black;
+}
+#oyaji>div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#form{
+    width: auto;
+    /* display: block; */
+    margin:  auto;
+    
+}
+input{
+    padding: 5px;
+    display: block;
+    margin: 15px auto;
+    width: auto;
+}
+h2{
+    text-align: center;
+}

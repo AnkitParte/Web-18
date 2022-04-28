@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h2>Amaxon Login</h2>
+    <div id="okasan">
+        <form id="form">
+            <input type="text" name="" id="email" placeholder="email">
+            <input type="password" name="" id="password" placeholder="password">
+            <input type="submit" name="Login" id="">
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+    document.querySelector("#form").addEventListener("submit",checkid)
+
+    var array = JSON.parse(localStorage.getItem("idstorage"))
+
+    function checkid(){
+        event.preventDefault();
+
+        var result=  array.map(function(elem){
+            var email = form.email.value;
+            var password = form.password.value;
+            
+            if(email==elem.email && password==elem.password){
+                return true;
+            }
+        })
+        if(result){
+            alert("login succesful");
+            // window.location.href="signUp.html"
+        }
+        else{
+            alert("enter invalid credentials");
+            window.location.href="signUp.html"
+        }
+
+        const inputs = document.querySelectorAll("#email, #password");
+
+        inputs.forEach(input => {input.value = "";})
+
+
+    }
+</script>

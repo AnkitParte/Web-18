@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signUp</title>
+    <link rel="stylesheet" href="signup.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h2>Amaxon SignUp</h2>
+    <div id="oyaji">
+        <form id="form">
+            <input type="numbers" name="" id="name" placeholder="enter mobile">
+            <input type="text" name="" id="email" placeholder="enter email">
+            <input type="password" name="" id="password" placeholder="enter password">
+            <input type="submit" name="signup" >
+        </form>
+
+        <div><p> Already have an account <a href="login.html">login</a></p></div>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("#form").addEventListener("submit",creation)
+
+    var arr= JSON.parse(localStorage.getItem("idstorage")) || []  ;
+
+    function creation(){
+
+        event.preventDefault();
+
+        var obj = {
+            name : form.name.value,
+            email : form.email.value,
+            password : form.password.value
+        }
+
+        arr.push(obj);
+        localStorage.setItem("idstorage",JSON.stringify(arr));
+
+        const inputs = document.querySelectorAll("#name ,#email, #password");
+
+        inputs.forEach(input => {input.value = "";})
+
+    }
+</script>
